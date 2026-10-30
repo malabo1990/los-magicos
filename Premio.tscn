@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://deg23drpgcd3o"]
+
+[ext_resource type="Script" uid="uid://cl76kgqih287h" path="res://Premio.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d4acewve4p6rn" path="res://premios/icon_regalo.png" id="2_regalo"]
+[ext_resource type="Texture2D" uid="uid://cxw0jaq3avl4u" path="res://premios/Agrupar.png" id="3_m2i7k"]
+[ext_resource type="Texture2D" uid="uid://d8gme4vww7q3" path="res://Triángulo izqueirda.svg" id="10_izq"]
+[ext_resource type="Texture2D" uid="uid://bfovavmaqgqh6" path="res://Triángulo derecha.svg" id="11_der"]
+[ext_resource type="Texture2D" uid="uid://c2qbt5ob0ifpq" path="res://premios/estrella5.png" id="20_star5"]
+[ext_resource type="Texture2D" uid="uid://juxojwcjtrqt" path="res://premios/destello4.png" id="21_star4"]
+[ext_resource type="Texture2D" uid="uid://cjlu0kvgn2gmn" path="res://premios/brillo.png" id="22_glow"]
+[ext_resource type="Texture2D" uid="uid://c1libl53rvo2r" path="res://premios/rayos.png" id="23_rayos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fondo"]
+bg_color = Color(0, 0, 0, 0.55)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_add"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0, 0.15, 0.65, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_suave"]
+offsets = PackedFloat32Array(0, 0.2, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="Premio" type="Control" unique_id=1415971742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="BotonRegalo" type="TextureButton" parent="." unique_id=87929493]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -115.0
+offset_right = 40.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(40, 40)
+texture_normal = ExtResource("2_regalo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Popup" type="Control" parent="." unique_id=815735340]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fondo" type="Button" parent="Popup" unique_id=1338660085]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fondo")
+
+[node name="PremioTextura" type="TextureRect" parent="Popup" unique_id=2075347446]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.5
+offset_top = -456.0
+offset_right = 202.5
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(600, 285)
+mouse_filter = 2
+texture = ExtResource("3_m2i7k")
+stretch_mode = 5
+
+[node name="IconoPremio" type="TextureRect" parent="Popup/PremioTextura"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 127.5
+offset_top = 61.0
+offset_right = 277.5
+offset_bottom = 189.0
+pivot_offset = Vector2(75, 64)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Estrellas" type="CPUParticles2D" parent="Popup/PremioTextura" unique_id=1267974165]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_add")
+position = Vector2(202.5, 167)
+emitting = false
+amount = 40
+texture = ExtResource("20_star5")
+lifetime = 1.2
+one_shot = true
+explosiveness = 0.75
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 180.0
+spread = 180.0
+gravity = Vector2(0, 140)
+initial_velocity_min = 320.0
+initial_velocity_max = 680.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+damping_min = 200.0
+damping_max = 320.0
+angle_max = 360.0
+scale_amount_min = 0.3
+scale_amount_max = 0.7
+color = Color(1, 0.8, 0.3, 1)
+color_ramp = SubResource("Gradient_fade")
+
+[node name="Destellos" type="CPUParticles2D" parent="Popup/PremioTextura" unique_id=1267974166]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_add")
+position = Vector2(202.5, 167)
+emitting = false
+amount = 24
+texture = ExtResource("21_star4")
+one_shot = true
+explosiveness = 0.7
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 170.0
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 220.0
+initial_velocity_max = 460.0
+angular_velocity_min = -240.0
+angular_velocity_max = 240.0
+damping_min = 200.0
+damping_max = 300.0
+angle_max = 360.0
+scale_amount_min = 0.25
+scale_amount_max = 0.5
+color = Color(1, 0.85, 0.4, 1)
+color_ramp = SubResource("Gradient_fade")
+
+[node name="Chispas" type="CPUParticles2D" parent="Popup/PremioTextura" unique_id=1267974168]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_add")
+position = Vector2(202.5, 167)
+emitting = false
+amount = 36
+texture = ExtResource("21_star4")
+lifetime = 3.0
+preprocess = 3.0
+emission_shape = 1
+emission_sphere_radius = 260.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+angle_max = 360.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color = Color(1, 0.85, 0.45, 1)
+color_ramp = SubResource("Gradient_suave")
+
+[node name="Resplandor" type="TextureRect" parent="Popup/PremioTextura" unique_id=1267974167]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_add")
+layout_mode = 0
+offset_left = -197.5
+offset_top = -233.0
+offset_right = 602.5
+offset_bottom = 567.0
+pivot_offset = Vector2(400, 400)
+mouse_filter = 2
+texture = ExtResource("22_glow")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rayos" type="TextureRect" parent="Popup/PremioTextura" unique_id=553783210]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_add")
+layout_mode = 0
+offset_left = -297.5
+offset_top = -333.0
+offset_right = 702.5
+offset_bottom = 667.0
+pivot_offset = Vector2(500, 500)
+mouse_filter = 2
+texture = ExtResource("23_rayos")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="Popup" unique_id=570177579]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/PanelContainer2" unique_id=592158153]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/PanelContainer2/MarginContainer" unique_id=1716962155]
+layout_mode = 2
+
+[node name="BotonAnteriorPremio" type="Button" parent="Popup/PanelContainer2/MarginContainer/HBoxContainer" unique_id=309177017]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 84)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("10_izq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer" type="Control" parent="Popup/PanelContainer2/MarginContainer/HBoxContainer" unique_id=932797648]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BotonSiguientePremio" type="Button" parent="Popup/PanelContainer2/MarginContainer/HBoxContainer" unique_id=2054112866]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 84)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("11_der")
+flat = true
+icon_alignment = 1
+expand_icon = true

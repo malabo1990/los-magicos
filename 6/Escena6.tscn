@@ -1,0 +1,951 @@
+[gd_scene format=3 uid="uid://cu6apofb3gnpn"]
+
+[ext_resource type="Script" uid="uid://cx0dlxhfejkfr" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://cq1k1subwx3ra" path="res://Campo.png" id="2_campo"]
+[ext_resource type="Texture2D" uid="uid://dlr0ixnkr3bft" path="res://6/6.png" id="2_img"]
+[ext_resource type="Texture2D" uid="uid://b2x8nquq45qyw" path="res://maps_transparente.png" id="2_maps"]
+[ext_resource type="Texture2D" uid="uid://vojoi7n6h8p" path="res://slider_grabber.png" id="5_grabber"]
+[ext_resource type="Texture2D" uid="uid://u3xc2uahw33o" path="res://marcos_transparente.png" id="6_marcos"]
+[ext_resource type="Script" uid="uid://cii3f1ko8m4rc" path="res://TamanoTexto.gd" id="7_tamano"]
+[ext_resource type="Texture2D" uid="uid://dpxeup3vigo81" path="res://papel_transparente.png" id="8_eu46b"]
+[ext_resource type="Script" uid="uid://daqb0vngx6gyf" path="res://TogglePanel.gd" id="9_b63v6"]
+[ext_resource type="VideoStream" uid="uid://dvcylbakmp8mp" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="11_video"]
+[ext_resource type="Texture2D" uid="uid://omq3serjqnoh" path="res://mobile.png" id="12_mobile"]
+[ext_resource type="Script" uid="uid://bnn7f3ibqbhvg" path="res://6/SelectorLetras.gd" id="13_sel"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+[ext_resource type="PackedScene" uid="uid://deg23drpgcd3o" path="res://Premio.tscn" id="99_premio"]
+[ext_resource type="PackedScene" path="res://Cuestion.tscn" id="100_cuestion"]
+[ext_resource type="PackedScene" path="res://Fallo.tscn" id="101_fallo"]
+[ext_resource type="PackedScene" path="res://JuegoArrastrarLetras.tscn" id="102_juego"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+[ext_resource type="Texture2D" uid="uid://ywiadpdd3y4i" path="res://6/hand.png" id="120_premio"]
+[ext_resource type="FontFile" uid="uid://bbns4nkaauted" path="res://fonts/Fredoka.ttf" id="font_fredoka"]
+[ext_resource type="FontFile" uid="uid://dgryo2x2ynkxw" path="res://fonts/Nunito.ttf" id="font_nunito"]
+[ext_resource type="Texture2D" uid="uid://bsa4fs16s8oxe" path="res://6/sordociegos/a.png" id="img_a"]
+[ext_resource type="Texture2D" uid="uid://df6dw088ya03a" path="res://6/sordociegos/b.png" id="img_b"]
+[ext_resource type="Texture2D" uid="uid://gyao1pl2h2ar" path="res://6/sordociegos/c.png" id="img_c"]
+[ext_resource type="Texture2D" uid="uid://boxjuvg61h72" path="res://6/sordociegos/ch.png" id="img_ch"]
+[ext_resource type="Texture2D" uid="uid://c136dgipajuh4" path="res://6/sordociegos/d.png" id="img_d"]
+[ext_resource type="Texture2D" uid="uid://bkocnsadskdcb" path="res://6/sordociegos/e.png" id="img_e"]
+[ext_resource type="Texture2D" uid="uid://csboqwjlto6w7" path="res://6/sordociegos/ñ.png" id="img_enie"]
+[ext_resource type="Texture2D" uid="uid://byaj41785lkkm" path="res://6/sordociegos/f.png" id="img_f"]
+[ext_resource type="Texture2D" uid="uid://b6lx2fv2hw1x5" path="res://6/sordociegos/g.png" id="img_g"]
+[ext_resource type="Texture2D" uid="uid://c68ywsn38xksi" path="res://6/sordociegos/h.png" id="img_h"]
+[ext_resource type="Texture2D" uid="uid://cr3f6u05yw3qx" path="res://6/sordociegos/i.png" id="img_i"]
+[ext_resource type="Texture2D" uid="uid://q0opgm4d32fv" path="res://6/sordociegos/j.png" id="img_j"]
+[ext_resource type="Texture2D" uid="uid://c3kjcot3fhsbi" path="res://6/sordociegos/k.png" id="img_k"]
+[ext_resource type="Texture2D" uid="uid://kc7qdcj8amne" path="res://6/sordociegos/l.png" id="img_l"]
+[ext_resource type="Texture2D" uid="uid://cha0v1pwsu70l" path="res://6/sordociegos/ll.png" id="img_ll"]
+[ext_resource type="Texture2D" uid="uid://j7vl1po85n64" path="res://6/sordociegos/m.png" id="img_m"]
+[ext_resource type="Texture2D" uid="uid://nx8tlkrhff84" path="res://6/sordociegos/n.png" id="img_n"]
+[ext_resource type="Texture2D" uid="uid://c540xle1g3w33" path="res://6/sordociegos/o.png" id="img_o"]
+[ext_resource type="Texture2D" uid="uid://bhjhfisp4waco" path="res://6/sordociegos/p.png" id="img_p"]
+[ext_resource type="Texture2D" uid="uid://cttqet8jbrmvi" path="res://6/sordociegos/q.png" id="img_q"]
+[ext_resource type="Texture2D" uid="uid://7sjx6fayiwir" path="res://6/sordociegos/r.png" id="img_r"]
+[ext_resource type="Texture2D" uid="uid://ih0u2d1uhiyc" path="res://6/sordociegos/rr.png" id="img_rr"]
+[ext_resource type="Texture2D" uid="uid://cc85mtkmljlwc" path="res://6/sordociegos/s.png" id="img_s"]
+[ext_resource type="Texture2D" uid="uid://wsemthub4ccj" path="res://6/sordociegos/t.png" id="img_t"]
+[ext_resource type="Texture2D" uid="uid://5evtdhtaiey7" path="res://6/sordociegos/u.png" id="img_u"]
+[ext_resource type="Texture2D" uid="uid://pay5v3m0f3ng" path="res://6/sordociegos/v.png" id="img_v"]
+[ext_resource type="Texture2D" uid="uid://dok0lqvjobsgt" path="res://6/sordociegos/w.png" id="img_w"]
+[ext_resource type="Texture2D" uid="uid://cpxf1can0c1lk" path="res://6/sordociegos/x.png" id="img_x"]
+[ext_resource type="Texture2D" uid="uid://cyhfsku7i325l" path="res://6/sordociegos/y.png" id="img_y"]
+[ext_resource type="Texture2D" uid="uid://jjve5hqlgkrh" path="res://6/sordociegos/z.png" id="img_z"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejs1d"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8ey"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.3)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh13a"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co70b"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g63rg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipkak"]
+bg_color = Color(1, 0.6, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1larq"]
+bg_color = Color(1, 0.95, 0.8, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.12890625, 0.12890625, 0.12890625, 1)
+
+[node name="Escena6" type="Control" unique_id=131779630]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://5/Escena5.tscn"
+escena_siguiente = "res://7/Escena7.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+
+[node name="Fondo" type="Panel" parent="." unique_id=541256847]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1605758011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -23.0
+offset_right = 14.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_campo")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=61449547]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="maps" type="NinePatchRect" parent="." unique_id=2111073772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.0
+offset_top = -258.0
+offset_right = 528.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_maps")
+region_rect = Rect2(24.48816, -3.5371094, 2124.6138, 1326.8655)
+patch_margin_left = 128
+patch_margin_top = 109
+patch_margin_right = 101
+patch_margin_bottom = 103
+
+[node name="barra titulo" type="TextureRect" parent="maps" unique_id=706944819]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.7821
+offset_top = -28.0
+offset_right = 252.7821
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("6_marcos")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="maps/barra titulo" unique_id=1693393552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="maps/barra titulo/MarginContainer" unique_id=1736069789]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 32
+text = "3. Helen Keller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="maps" unique_id=1016880198]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="maps/MarginContainer" unique_id=282983612]
+layout_mode = 2
+
+[node name="Imagen" type="TextureRect" parent="maps/MarginContainer/HBoxContainer" unique_id=1251212090]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_img")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SliderTamano" type="VSlider" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=1946128943]
+custom_minimum_size = Vector2(52, 240)
+layout_mode = 0
+offset_left = -82.0
+offset_top = 10.0
+offset_right = -30.0
+offset_bottom = 250.0
+tooltip_text = "Tamaño del texto"
+theme_override_icons/grabber = ExtResource("5_grabber")
+theme_override_icons/grabber_highlight = ExtResource("5_grabber")
+theme_override_icons/grabber_disabled = ExtResource("5_grabber")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ejs1d")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ct8ey")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh13a")
+min_value = 12.0
+max_value = 40.0
+value = 20.0
+script = ExtResource("7_tamano")
+ruta_texto = NodePath("../TextoPanel/Margen/VBoxContainer/Texto")
+
+[node name="EtiquetaTamano" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=1926937621]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -50.0
+offset_right = 180.0
+offset_bottom = -6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_co70b")
+
+[node name="Texto" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/EtiquetaTamano" unique_id=138105823]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tamaño del texto"
+vertical_alignment = 1
+
+[node name="TextoPanel" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=973777651]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -25.0
+offset_right = 319.0
+offset_bottom = 301.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel" unique_id=1594524872]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen" unique_id=66536310]
+layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer" unique_id=1046044260]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("font_nunito")
+theme_override_font_sizes/normal_font_size = 20
+text = "HELEN KELLER
+Mujer sordociega
+
+Helen Keller se quedó sorda y ciega cuando era un bebé muy pequeño. No podía ni oír ni ver.
+Su maestra, Anne Sullivan, le enseñó a comunicarse. Un día puso la mano de Helen bajo el agua fría y le escribió la palabra «agua» en la otra mano. ¡Ese fue el primer momento mágico! Helen lo entendió.
+Helen se convirtió en la primera persona sordociega en ir a la universidad.
+Luchó toda su vida para que las personas sordas, ciegas y sordociegas tengan más derechos y mejor vida.
+
+Cuando conocieron la historia de Helen, consiguieron ver cómo se usaba la lengua de signos en las manos. Los niños se quedaron tan asombrados que les costaba correr para la siguiente prueba. Mientras corrían, Ángel vio que tras las ramas de los árboles aparecía una farola.
+¿Qué prueba les esperaba cerca de la farola?"
+
+[node name="Control" type="Control" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer" unique_id=188442379]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="papel_braille" type="NinePatchRect" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control" unique_id=923034964]
+visible = false
+custom_minimum_size = Vector2(50, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -399.0
+offset_right = 647.0
+offset_bottom = 179.0
+grow_vertical = 0
+texture = ExtResource("8_eu46b")
+region_rect = Rect2(32.391785, 14.231262, 1651.3589, 2485.6414)
+patch_margin_left = 165
+patch_margin_top = 182
+patch_margin_right = 182
+patch_margin_bottom = 200
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille" unique_id=54081700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 56
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 8
+
+[node name="Contenido" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen" unique_id=1626762537]
+layout_mode = 2
+theme_override_constants/separation = 6
+script = ExtResource("13_sel")
+
+[node name="Titulo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido" unique_id=926687012]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 24
+text = "Abecedario en las manos"
+horizontal_alignment = 1
+
+[node name="ImagenGrande" type="TextureRect" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido" unique_id=1999145817]
+custom_minimum_size = Vector2(280, 210)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rejilla" type="GridContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido" unique_id=1293501382]
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 2
+columns = 10
+
+[node name="Boton_A" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1602421609]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_a")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_B" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=68225008]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_b")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_C" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=777955363]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_c")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Ch" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=930198973]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_ch")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_D" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1867232395]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_d")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_E" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1295684337]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_F" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=23293987]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_f")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_G" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=957988850]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_H" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1187047137]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_h")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_I" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=520533634]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_i")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_J" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1069182583]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_j")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_K" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1924257469]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_k")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_L" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=2086804076]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_l")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Ll" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1189910393]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_ll")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_M" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1883006373]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_m")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_N" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1576051998]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_n")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Enye" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1101013180]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_enie")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_O" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1454863706]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_o")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_P" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=831221058]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_p")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Q" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=2108298653]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_q")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_R" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=407512734]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_r")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Rr" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=440294941]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_rr")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_S" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=800190180]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_s")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_T" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1672437449]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_t")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_U" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=2048856538]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_V" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1800605688]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_v")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_W" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1927930719]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_w")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_X" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1052477944]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_x")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Y" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=22276375]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Boton_Z" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control/papel_braille/Margen/Contenido/Rejilla" unique_id=1332977020]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btn")
+icon = ExtResource("img_z")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonAlfabeto" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer/Control" unique_id=710458146]
+layout_mode = 1
+offset_left = -30.0
+offset_top = 204.0
+offset_right = 20.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g63rg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ipkak")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1larq")
+text = "+"
+script = ExtResource("9_b63v6")
+panel_objetivo = NodePath("../papel_braille")
+
+[node name="Panel video" type="Control" parent="maps/MarginContainer/HBoxContainer" unique_id=436161101]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=1754304907]
+clip_children = 1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 68.0
+offset_right = 258.0
+offset_bottom = 355.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_njqwk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="maps/MarginContainer/HBoxContainer/Panel video/Panel" unique_id=875721014]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.89627
+offset_top = -140.5
+offset_right = 242.49997
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("11_video")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Mobile" type="TextureRect" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=1826045577]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 51.0
+offset_right = 279.0
+offset_bottom = 388.1323
+texture = ExtResource("12_mobile")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NumeroPagina" parent="." unique_id=1687590046 instance=ExtResource("98_numero")]
+numero = 7
+
+[node name="Premio" parent="." unique_id=1501029844 instance=ExtResource("99_premio")]
+visible = false
+layout_mode = 1
+textura_premio = ExtResource("120_premio")
+escala_premio = 0.85
+
+[node name="Cuestion" parent="." unique_id=1649140246 instance=ExtResource("100_cuestion")]
+visible = false
+layout_mode = 1
+pregunta = "En el alfabeto en la palma de la mano de sordociegos, ¿cómo se escribe ESTIBALIZ?"
+opciones = Array[String](["A) E - S - T - I - B - A - L - I - Z", "B) H - E - L - E - N - K - E - L - L - E - R", "C) M - A - G - I - C - S - I - G - N"])
+indice_correcto = 0
+pista_fallo = "¡Casi! Toca las letras del abecedario en la pantalla y busca cómo se hace cada letra de E-S-T-I-B-A-L-I-Z."
+
+[node name="Fallo" parent="." unique_id=1809090939 instance=ExtResource("101_fallo")]
+visible = false
+layout_mode = 1
+
+[node name="JuegoArrastrarLetras" parent="." unique_id=1123833254 instance=ExtResource("102_juego")]
+visible = false
+layout_mode = 1
+modo = "sordociegos"
+palabra_objetivo = "ESTIBALIZ"
+indice_reto = 2
+
+[node name="MarcadorPuntos" parent="." unique_id=1677858593 instance=ExtResource("103_marcador")]
+visible = false
+layout_mode = 1

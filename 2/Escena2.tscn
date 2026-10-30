@@ -1,0 +1,393 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" path="res://2/2.png" id="2_img"]
+[ext_resource type="Script" path="res://NumeroPagina.gd" id="4_8i7fs"]
+[ext_resource type="Script" path="res://TamanoTexto.gd" id="5_wgf6t"]
+[ext_resource type="Texture2D" path="res://slider_grabber.png" id="6_ddfdy"]
+[ext_resource type="VideoStream" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="6_fopo7"]
+[ext_resource type="Script" path="res://TogglePanel.gd" id="7_fopo7"]
+[ext_resource type="Texture2D" path="res://Triángulo izqueirda.svg" id="93_izq"]
+[ext_resource type="Texture2D" path="res://Triángulo derecha.svg" id="94_der"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transp"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outer"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu46b"]
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_607xa"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlayn"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.3)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h5jt"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddfdy"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bjat"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nncn5"]
+bg_color = Color(1, 0.6, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btokk"]
+bg_color = Color(1, 0.95, 0.8, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[node name="Escena2" type="Control" unique_id=1749195857]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://Presentacion/Escena1.tscn"
+escena_siguiente = "res://3/Escena3.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+metadata/_edit_horizontal_guides_ = [447.0]
+
+[node name="Imagen" type="TextureRect" parent="." unique_id=1377807662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_img")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=211605573]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_transp")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=1482679380]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer" unique_id=1396300024]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=2139626542]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NumeroPagina" type="PanelContainer" parent="." unique_id=1402839988 instance=ExtResource("98_numero")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 13.0
+offset_right = -11.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_outer")
+script = ExtResource("4_8i7fs")
+numero = 3
+
+[node name="contenido" type="Panel" parent="." unique_id=204840543]
+visible = false
+custom_minimum_size = Vector2(50, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33333334
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -348.0
+offset_right = -57.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="Margen" type="MarginContainer" parent="contenido" unique_id=1408864501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="contenido/Margen" unique_id=511204468]
+layout_mode = 2
+
+[node name="TextoColumna" type="VBoxContainer" parent="contenido/Margen/HBoxContainer" unique_id=402527206]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Texto" type="RichTextLabel" parent="contenido/Margen/HBoxContainer/TextoColumna" unique_id=1069128598]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "En el parque hay 6 niños jugando. Ana, la oyente, ha preguntado en lengua de signos:
+
+—Quiero saber algo más de la lengua de signos, o algo parecido, para poder comunicarme con diferentes personas.
+
+Iñaki sonrió y miró a todos diciendo emocionado:
+—¡Claro! David, ¿tienes el mapa?
+
+David metió la mano en su bolsillo lleno de hojas secas y sacó un papelito brillante y arrugado y exclamó:
+—¡Aquí está! El Mapa de los Secretos Accesibles. ¡Ocho tesoros escondidos en el parque!
+
+Ana, al ver que el mapa tenía dibujos bonitos como manos gigantes, bombillas, orejas con rayos... y ocho X rojas, gritó:
+—¡Es un tesoro de los mágicos!
+
+Casimiro sintió la emoción por todo su cuerpo y tocó el hombro de Iñaki, que animó a empezar el juego:
+—¡Vamos! Primera parada. ¡Todos juntos!"
+
+[node name="Panel" type="Panel" parent="contenido/Margen/HBoxContainer" unique_id=1127668358]
+clip_children = 1
+custom_minimum_size = Vector2(466, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu46b")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="contenido/Margen/HBoxContainer/Panel" unique_id=1432552654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -135.0
+offset_right = 233.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("6_fopo7")
+autoplay = true
+expand = true
+loop = true
+
+[node name="SliderTamano" type="HSlider" parent="contenido" unique_id=557771944]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = -72.0
+offset_right = -486.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+tooltip_text = "Tamaño del texto"
+theme_override_icons/grabber = ExtResource("6_ddfdy")
+theme_override_icons/grabber_highlight = ExtResource("6_ddfdy")
+theme_override_icons/grabber_disabled = ExtResource("6_ddfdy")
+theme_override_styles/slider = SubResource("StyleBoxFlat_607xa")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hlayn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_0h5jt")
+min_value = 12.0
+max_value = 40.0
+value = 20.0
+script = ExtResource("5_wgf6t")
+
+[node name="EtiquetaTamano" type="PanelContainer" parent="contenido" unique_id=928539116]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -126.0
+offset_right = 235.0
+offset_bottom = -82.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ddfdy")
+
+[node name="Texto" type="Label" parent="contenido/EtiquetaTamano" unique_id=643947287]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tamaño del texto"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1432962969]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -105.0
+offset_right = -57.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BotonAlfabeto" type="Button" parent="Control" unique_id=1289037064]
+layout_mode = 1
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bjat")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nncn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btokk")
+text = "+"
+script = ExtResource("7_fopo7")
+panel_objetivo = NodePath("../../contenido")
+
+[node name="BotonAnterior" type="Button" parent="." unique_id=405636825]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -55.0
+offset_right = 154.0
+offset_bottom = 55.0
+grow_vertical = 2
+size_flags_vertical = 4
+icon = ExtResource("93_izq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonSiguiente" type="Button" parent="." unique_id=2002721605]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -55.0
+offset_right = -44.0
+offset_bottom = 55.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 4
+icon = ExtResource("94_der")
+flat = true
+icon_alignment = 1
+expand_icon = true

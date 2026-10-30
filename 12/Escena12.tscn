@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://lbtrnqg2lw6s"]
+
+[ext_resource type="Script" uid="uid://cx0dlxhfejkfr" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://bfu43u4g7guf5" path="res://12/12.png" id="2_img"]
+[ext_resource type="VideoStream" uid="uid://dvcylbakmp8mp" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="6_fopo7"]
+[ext_resource type="Script" uid="uid://daqb0vngx6gyf" path="res://TogglePanel.gd" id="7_fopo7"]
+[ext_resource type="Texture2D" uid="uid://d8gme4vww7q3" path="res://Triángulo izqueirda.svg" id="93_izq"]
+[ext_resource type="Texture2D" uid="uid://bfovavmaqgqh6" path="res://Triángulo derecha.svg" id="94_der"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transp"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu46b"]
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bjat"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nncn5"]
+bg_color = Color(1, 0.6, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btokk"]
+bg_color = Color(1, 0.95, 0.8, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[node name="Escena12" type="Control" unique_id=442373709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://11/Escena11.tscn"
+escena_siguiente = "res://Dactololigico/Escena1.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+metadata/_edit_horizontal_guides_ = [447.0]
+
+[node name="Imagen" type="TextureRect" parent="." unique_id=281771766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_img")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=326588410]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_transp")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=1990530872]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer" unique_id=116862107]
+layout_mode = 2
+
+[node name="BotonAnterior" type="Button" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=1701605690]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("93_izq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer" type="Control" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=288542593]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BotonSiguiente" type="Button" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=1139396725]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("94_der")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="NumeroPagina" parent="." unique_id=249085696 instance=ExtResource("98_numero")]
+numero = 13
+
+[node name="Control" type="Control" parent="." unique_id=665774481]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -83.0
+offset_right = -57.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Contenido" type="Panel" parent="Control" unique_id=2027262155]
+custom_minimum_size = Vector2(50, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -689.0
+offset_top = -265.0
+offset_right = 34.0
+offset_bottom = -17.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="Margen" type="MarginContainer" parent="Control/Contenido" unique_id=530911624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Contenido/Margen" unique_id=1481965349]
+layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="Control/Contenido/Margen/HBoxContainer" unique_id=1616143411]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "El mapa brilló, y una voz mágica dijo:
+—¡Los seis sois mágicos! Todo lo que habéis conseguido en este juego une corazones.
+
+Todos se abrazaron muy fuerte y, juntos, tocándose los puños, gritaron:
+—¡Somos amigos mágicos para siempre!"
+
+[node name="Panel" type="Panel" parent="Control/Contenido/Margen/HBoxContainer" unique_id=1111728931]
+clip_children = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu46b")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/Contenido/Margen/HBoxContainer/Panel" unique_id=2074611031]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.89627
+offset_top = -101.0
+offset_right = 174.25488
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("6_fopo7")
+autoplay = true
+expand = true
+loop = true
+
+[node name="BotonAlfabeto" type="Button" parent="Control" unique_id=593703670]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bjat")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nncn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btokk")
+text = "+"
+script = ExtResource("7_fopo7")
+panel_objetivo = NodePath("../Contenido")
+
+[node name="MarcadorPuntos" parent="." instance=ExtResource("103_marcador")]
+layout_mode = 1
+

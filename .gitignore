@@ -1,0 +1,12 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Compilaciones (no van al repositorio)
+/build/
+*.apk
+*.idsig
+*.ipa
+
+# Addon MCP: capturas de depuración
+addons/godot_mcp/cache/

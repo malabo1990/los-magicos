@@ -1,0 +1,339 @@
+[gd_scene format=3 uid="uid://byll7xwrwn5ml"]
+
+[ext_resource type="Script" uid="uid://cx0dlxhfejkfr" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://cq1k1subwx3ra" path="res://Campo.png" id="2_campo"]
+[ext_resource type="Texture2D" uid="uid://bax44uh1im0iv" path="res://5/5.png" id="2_img"]
+[ext_resource type="Texture2D" uid="uid://b2x8nquq45qyw" path="res://maps_transparente.png" id="2_maps"]
+[ext_resource type="Texture2D" uid="uid://vojoi7n6h8p" path="res://slider_grabber.png" id="5_grabber"]
+[ext_resource type="Texture2D" uid="uid://u3xc2uahw33o" path="res://marcos_transparente.png" id="6_marcos"]
+[ext_resource type="Script" uid="uid://cii3f1ko8m4rc" path="res://TamanoTexto.gd" id="7_tamano"]
+[ext_resource type="VideoStream" uid="uid://dvcylbakmp8mp" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="11_video"]
+[ext_resource type="Texture2D" uid="uid://omq3serjqnoh" path="res://mobile.png" id="12_mobile"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+[ext_resource type="PackedScene" uid="uid://deg23drpgcd3o" path="res://Premio.tscn" id="99_premio"]
+[ext_resource type="PackedScene" path="res://5/CuestionGallaudet.tscn" id="100_cuestion"]
+[ext_resource type="PackedScene" path="res://Fallo.tscn" id="101_fallo"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+[ext_resource type="Texture2D" uid="uid://d4keh6fiwls78" path="res://5/gallaudet.png" id="120_premio"]
+[ext_resource type="FontFile" uid="uid://bbns4nkaauted" path="res://fonts/Fredoka.ttf" id="font_fredoka"]
+[ext_resource type="FontFile" uid="uid://dgryo2x2ynkxw" path="res://fonts/Nunito.ttf" id="font_nunito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejs1d"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8ey"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.3)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh13a"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co70b"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.12890625, 0.12890625, 0.12890625, 1)
+
+[node name="Escena5" type="Control" unique_id=72507544]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://4/Escena4.tscn"
+escena_siguiente = "res://6/Escena6.tscn"
+
+[node name="Fondo" type="Panel" parent="." unique_id=1400647781]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1920606278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -23.0
+offset_right = 14.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_campo")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=611943255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="maps" type="NinePatchRect" parent="." unique_id=582403304]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.0
+offset_top = -258.0
+offset_right = 528.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_maps")
+region_rect = Rect2(24.48816, -3.5371094, 2124.6138, 1326.8655)
+patch_margin_left = 128
+patch_margin_top = 109
+patch_margin_right = 101
+patch_margin_bottom = 103
+
+[node name="barra titulo" type="TextureRect" parent="maps" unique_id=2005130566]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.7821
+offset_top = -300.5
+offset_right = 252.7821
+offset_bottom = -172.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_marcos")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="maps/barra titulo" unique_id=405968075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="maps/barra titulo/MarginContainer" unique_id=305936126]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 32
+text = "2. Gallaudet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="maps" unique_id=579293025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="maps/MarginContainer" unique_id=2072732832]
+layout_mode = 2
+
+[node name="Imagen" type="TextureRect" parent="maps/MarginContainer/HBoxContainer" unique_id=718254860]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_img")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoPanel" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=927750248]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 355.0
+offset_bottom = 260.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel" unique_id=392659925]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen" unique_id=2125654454]
+layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer" unique_id=250021274]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("font_nunito")
+theme_override_font_sizes/normal_font_size = 20
+text = "Llegaron a una zona con una foto muy grande en la que se veía:
+
+UNIVERSIDAD GALLAUDET
+La universidad especial para sordos
+
+La Universidad Gallaudet es la única universidad del mundo solo para personas sordas.
+Es muy grande, como un barrio entero. Allí viven y estudian miles de estudiantes sordos.
+Todos los profesores y trabajadores saben lengua de signos. Las clases, los juegos, los deportes y las fiestas se hacen en lengua de signos.
+Al principio, el jefe de la universidad era oyente, pero en el año 1988 los estudiantes protestaron:
+«¡Queremos un jefe sordo!»
+¡Y lo consiguieron! Desde entonces, tuvieron un jefe sordo.
+
+Una vez superada la segunda X y conseguir un abecedario dactilológico, siguieron corriendo a por la siguiente prueba."
+
+[node name="SliderTamano" type="VSlider" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=555946163]
+custom_minimum_size = Vector2(52, 240)
+layout_mode = 0
+offset_left = -82.0
+offset_top = 10.0
+offset_right = -30.0
+offset_bottom = 250.0
+tooltip_text = "Tamaño del texto"
+theme_override_icons/grabber = ExtResource("5_grabber")
+theme_override_icons/grabber_highlight = ExtResource("5_grabber")
+theme_override_icons/grabber_disabled = ExtResource("5_grabber")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ejs1d")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ct8ey")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh13a")
+min_value = 12.0
+max_value = 40.0
+value = 20.0
+script = ExtResource("7_tamano")
+ruta_texto = NodePath("../TextoPanel/Margen/VBoxContainer/Texto")
+
+[node name="EtiquetaTamano" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=1747514848]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -50.0
+offset_right = 180.0
+offset_bottom = -6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_co70b")
+
+[node name="Texto" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/EtiquetaTamano" unique_id=1561327001]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tamaño del texto"
+vertical_alignment = 1
+
+[node name="Panel video" type="Control" parent="maps/MarginContainer/HBoxContainer" unique_id=202433778]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=1125207491]
+clip_children = 1
+layout_mode = 0
+offset_left = 37.0
+offset_top = 82.0
+offset_right = 250.0
+offset_bottom = 369.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_njqwk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="maps/MarginContainer/HBoxContainer/Panel video/Panel" unique_id=972227125]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.89627
+offset_top = -140.5
+offset_right = 242.49997
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("11_video")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Mobile" type="TextureRect" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=791573369]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 65.0
+offset_right = 271.0
+offset_bottom = 402.1323
+texture = ExtResource("12_mobile")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NumeroPagina" parent="." unique_id=1275711845 instance=ExtResource("98_numero")]
+numero = 6
+
+[node name="Premio" parent="." unique_id=222225926 instance=ExtResource("99_premio")]
+visible = false
+layout_mode = 1
+textura_premio = ExtResource("120_premio")
+
+[node name="Cuestion" parent="." unique_id=986628620 instance=ExtResource("100_cuestion")]
+layout_mode = 1
+opciones = Array[String](["A) España 🇪🇸", "B) Polo Norte ❄️", "C) Estados Unidos (EEUU) 🇺🇸"])
+indice_reto = 1
+pista_fallo = "¡Casi! No está en el frío Polo Norte ni en España... ¡está en Washington D.C., en EEUU!"
+
+[node name="Fallo" parent="." unique_id=1210437911 instance=ExtResource("101_fallo")]
+layout_mode = 1
+
+[node name="MarcadorPuntos" parent="." unique_id=1928058550 instance=ExtResource("103_marcador")]
+layout_mode = 1

@@ -1,0 +1,1163 @@
+[gd_scene format=3 uid="uid://cy6mpn72q7qpb"]
+
+[ext_resource type="Script" uid="uid://cx0dlxhfejkfr" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://cq1k1subwx3ra" path="res://Campo.png" id="2_erayy"]
+[ext_resource type="Texture2D" uid="uid://yfjr385vlmca" path="res://4/4.png" id="2_img"]
+[ext_resource type="Texture2D" uid="uid://b2x8nquq45qyw" path="res://maps_transparente.png" id="2_sov87"]
+[ext_resource type="Script" uid="uid://daqb0vngx6gyf" path="res://TogglePanel.gd" id="3_toggle"]
+[ext_resource type="Texture2D" uid="uid://vojoi7n6h8p" path="res://slider_grabber.png" id="5_grabber"]
+[ext_resource type="Texture2D" uid="uid://u3xc2uahw33o" path="res://marcos_transparente.png" id="6_4mfa3"]
+[ext_resource type="Script" uid="uid://cii3f1ko8m4rc" path="res://TamanoTexto.gd" id="7_tamano"]
+[ext_resource type="Texture2D" uid="uid://dpxeup3vigo81" path="res://papel_transparente.png" id="8_0grl5"]
+[ext_resource type="VideoStream" uid="uid://dvcylbakmp8mp" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="11_0x8y4"]
+[ext_resource type="Texture2D" uid="uid://omq3serjqnoh" path="res://mobile.png" id="11_p8xpx"]
+[ext_resource type="PackedScene" uid="uid://deg23drpgcd3o" path="res://Premio.tscn" id="99_premio"]
+[ext_resource type="PackedScene" path="res://Cuestion.tscn" id="100_cuestion"]
+[ext_resource type="PackedScene" path="res://Fallo.tscn" id="101_fallo"]
+[ext_resource type="PackedScene" path="res://JuegoArrastrarLetras.tscn" id="102_juego"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+[ext_resource type="Texture2D" uid="uid://cewl0tldlamww" path="res://4/maquina.png" id="120_premio"]
+[ext_resource type="FontFile" uid="uid://bbns4nkaauted" path="res://fonts/Fredoka.ttf" id="font_fredoka"]
+[ext_resource type="FontFile" uid="uid://dgryo2x2ynkxw" path="res://fonts/Nunito.ttf" id="font_nunito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejs1d"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8ey"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.3)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh13a"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co70b"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alfa_normal"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alfa_pressed"]
+bg_color = Color(1, 0.6, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alfa_hover"]
+bg_color = Color(1, 0.95, 0.8, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.12890625, 0.12890625, 0.12890625, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qdw"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1lj4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Escena4" type="Control" unique_id=883739712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://3/Escena3.tscn"
+escena_siguiente = "res://5/Escena5.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+
+[node name="Fondo" type="Panel" parent="." unique_id=1206592811]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1052854021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -23.0
+offset_right = 14.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_erayy")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=1402708267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="maps" type="NinePatchRect" parent="." unique_id=1197541281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.0
+offset_top = -260.0
+offset_right = 528.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sov87")
+region_rect = Rect2(24.48816, -3.5371094, 2124.6138, 1326.8655)
+patch_margin_left = 128
+patch_margin_top = 109
+patch_margin_right = 101
+patch_margin_bottom = 103
+
+[node name="barra titulo" type="TextureRect" parent="maps" unique_id=1579351357]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.7821
+offset_top = -28.0
+offset_right = 252.7821
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("6_4mfa3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="maps/barra titulo" unique_id=60975945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="maps/barra titulo/MarginContainer" unique_id=1502855427]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 32
+text = "1. Braille"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderTamano" type="VSlider" parent="maps" unique_id=898743935]
+custom_minimum_size = Vector2(52, 240)
+layout_mode = 0
+offset_left = -27.0
+offset_top = 90.0
+offset_right = 25.0
+offset_bottom = 330.0
+tooltip_text = "Tamaño del texto"
+theme_override_icons/grabber = ExtResource("5_grabber")
+theme_override_icons/grabber_highlight = ExtResource("5_grabber")
+theme_override_icons/grabber_disabled = ExtResource("5_grabber")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ejs1d")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ct8ey")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh13a")
+min_value = 12.0
+max_value = 40.0
+value = 20.0
+script = ExtResource("7_tamano")
+ruta_texto = NodePath("../MarginContainer/HBoxContainer/TextoPanel/Margen/VBoxContainer/Texto")
+
+[node name="EtiquetaTamano" type="PanelContainer" parent="maps" unique_id=1231533088]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 30.0
+offset_right = 235.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_co70b")
+
+[node name="Texto" type="Label" parent="maps/EtiquetaTamano" unique_id=1636324203]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tamaño del texto"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="maps" unique_id=1686406796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="maps/MarginContainer" unique_id=1689883036]
+layout_mode = 2
+
+[node name="TextoPanel" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer" unique_id=998016910]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/TextoPanel" unique_id=718850479]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 95
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/TextoPanel/Margen" unique_id=44273015]
+layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="maps/MarginContainer/HBoxContainer/TextoPanel/Margen/VBoxContainer" unique_id=501442391]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("font_nunito")
+theme_override_font_sizes/normal_font_size = 20
+text = "El Braille es un sistema de lectura y escritura para ciegos y personas con baja visión. Se lee con los dedos tocando pequeños puntitos en relieve.
+Fue inventado por Louis Braille en 1824, cuando tenía 15 años.
+Todo se crea con solo 6 puntitos. Con estos 6 puntos se forman todas las letras, números y signos.
+
+¿Cómo se escribe?
+La forma más fácil es con la máquina de Braille.
+Esta máquina tiene solo 6 teclas.
+Es mucho más simple que un ordenador.
+Millones de personas en el mundo leen libros, estudian y escriben gracias al Braille.
+
+Al ver que superaron la primera prueba y conseguir la celda braille interactiva, volvieron a correr juntos, picados por la curiosidad, por la siguiente X."
+
+[node name="Imagen" type="TextureRect" parent="maps/MarginContainer/HBoxContainer" unique_id=1697711709]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_img")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=354183514]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 0
+offset_left = -384.0
+offset_right = -304.0
+offset_bottom = 443.0
+size_flags_horizontal = 0
+
+[node name="papel_braille" type="NinePatchRect" parent="maps/MarginContainer/HBoxContainer/Imagen/Control" unique_id=1104942848]
+visible = false
+custom_minimum_size = Vector2(50, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -594.0
+offset_right = 682.0
+offset_bottom = 66.0
+grow_vertical = 0
+texture = ExtResource("8_0grl5")
+region_rect = Rect2(32.391785, 1.0985413, 1680.2336, 2543.0244)
+patch_margin_left = 165
+patch_margin_top = 182
+patch_margin_right = 182
+patch_margin_bottom = 200
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille" unique_id=535192576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="Contenido" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen" unique_id=2089354082]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Titulo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido" unique_id=193665964]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 24
+text = "Alfabeto Braille"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido" unique_id=1206616589]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = -171
+columns = 8
+
+[node name="Celda_A" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1161027854]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_A" unique_id=1713878645]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_A/Caja" unique_id=1267688699]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "A"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_A/Caja" unique_id=1956722609]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠁"
+horizontal_alignment = 1
+
+[node name="Celda_B" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=466751385]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_B" unique_id=583452326]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_B/Caja" unique_id=2020836562]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "B"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_B/Caja" unique_id=394577806]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠃"
+horizontal_alignment = 1
+
+[node name="Celda_C" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1166060595]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_C" unique_id=2101541045]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_C/Caja" unique_id=752947244]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "C"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_C/Caja" unique_id=1649306136]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠉"
+horizontal_alignment = 1
+
+[node name="Celda_D" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1775150235]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_D" unique_id=160695289]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_D/Caja" unique_id=189914209]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "D"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_D/Caja" unique_id=1047640301]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠙"
+horizontal_alignment = 1
+
+[node name="Celda_E" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=824033485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_E" unique_id=1735414279]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_E/Caja" unique_id=1984523256]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_E/Caja" unique_id=2127523458]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠑"
+horizontal_alignment = 1
+
+[node name="Celda_F" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=175927412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_F" unique_id=1883902970]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_F/Caja" unique_id=500080605]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "F"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_F/Caja" unique_id=1383803574]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠋"
+horizontal_alignment = 1
+
+[node name="Celda_G" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1871079491]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_G" unique_id=1834587635]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_G/Caja" unique_id=2059380998]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "G"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_G/Caja" unique_id=1235389460]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠛"
+horizontal_alignment = 1
+
+[node name="Celda_H" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=551227898]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_H" unique_id=1050373157]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_H/Caja" unique_id=119682671]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "H"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_H/Caja" unique_id=338267297]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠓"
+horizontal_alignment = 1
+
+[node name="Celda_I" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=215341355]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_I" unique_id=1521561748]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_I/Caja" unique_id=878339187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "I"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_I/Caja" unique_id=724280048]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠊"
+horizontal_alignment = 1
+
+[node name="Celda_J" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1493258649]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_J" unique_id=1449895485]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_J/Caja" unique_id=173000557]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "J"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_J/Caja" unique_id=1734185969]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠚"
+horizontal_alignment = 1
+
+[node name="Celda_K" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1372247722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_K" unique_id=600744498]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_K/Caja" unique_id=402169170]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "K"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_K/Caja" unique_id=628478779]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠅"
+horizontal_alignment = 1
+
+[node name="Celda_L" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=286137024]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_L" unique_id=818447679]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_L/Caja" unique_id=1365217523]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "L"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_L/Caja" unique_id=193251584]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠇"
+horizontal_alignment = 1
+
+[node name="Celda_M" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=307553075]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_M" unique_id=1046539749]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_M/Caja" unique_id=2001787266]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "M"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_M/Caja" unique_id=1068028970]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠍"
+horizontal_alignment = 1
+
+[node name="Celda_N" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1844384173]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_N" unique_id=1999667865]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_N/Caja" unique_id=941976102]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "N"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_N/Caja" unique_id=878871412]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠝"
+horizontal_alignment = 1
+
+[node name="Celda_O" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1714154307]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_O" unique_id=45472487]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_O/Caja" unique_id=492157788]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "O"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_O/Caja" unique_id=1510460944]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠕"
+horizontal_alignment = 1
+
+[node name="Celda_P" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=695801930]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_P" unique_id=415475676]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_P/Caja" unique_id=1176387926]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "P"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_P/Caja" unique_id=791317088]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠏"
+horizontal_alignment = 1
+
+[node name="Celda_Q" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=305055937]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Q" unique_id=1264417423]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Q/Caja" unique_id=269043972]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "Q"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Q/Caja" unique_id=1240225213]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠟"
+horizontal_alignment = 1
+
+[node name="Celda_R" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1830805135]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_R" unique_id=1845390010]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_R/Caja" unique_id=1180867900]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "R"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_R/Caja" unique_id=1488242109]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠗"
+horizontal_alignment = 1
+
+[node name="Celda_S" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=2127525427]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_S" unique_id=572555615]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_S/Caja" unique_id=404234263]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "S"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_S/Caja" unique_id=776278917]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠎"
+horizontal_alignment = 1
+
+[node name="Celda_T" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=799713653]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_T" unique_id=1554701957]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_T/Caja" unique_id=1935742474]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "T"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_T/Caja" unique_id=498120080]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠞"
+horizontal_alignment = 1
+
+[node name="Celda_U" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1662150657]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_U" unique_id=1077047055]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_U/Caja" unique_id=886178663]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "U"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_U/Caja" unique_id=413189312]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠥"
+horizontal_alignment = 1
+
+[node name="Celda_V" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=148049479]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_V" unique_id=1288705500]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_V/Caja" unique_id=1521601733]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "V"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_V/Caja" unique_id=190688629]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠧"
+horizontal_alignment = 1
+
+[node name="Celda_W" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1662172113]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_W" unique_id=1531023895]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_W/Caja" unique_id=1230388937]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "W"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_W/Caja" unique_id=649564260]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠺"
+horizontal_alignment = 1
+
+[node name="Celda_X" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1320211709]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_X" unique_id=336083130]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_X/Caja" unique_id=1207774158]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "X"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_X/Caja" unique_id=395379604]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠭"
+horizontal_alignment = 1
+
+[node name="Celda_Y" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=374776026]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Y" unique_id=570423921]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Y/Caja" unique_id=2000053740]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "Y"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Y/Caja" unique_id=1515809900]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠽"
+horizontal_alignment = 1
+
+[node name="Celda_Z" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid" unique_id=1196214558]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Caja" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Z" unique_id=327539483]
+layout_mode = 2
+alignment = 1
+
+[node name="Letra" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Z/Caja" unique_id=1754746013]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "Z"
+horizontal_alignment = 1
+
+[node name="Glifo" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/Control/papel_braille/Margen/Contenido/Grid/Celda_Z/Caja" unique_id=1710776581]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "⠵"
+horizontal_alignment = 1
+
+[node name="BotonAlfabeto" type="Button" parent="maps/MarginContainer/HBoxContainer/Imagen/Control" unique_id=942666782]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 402.0
+offset_right = 88.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_alfa_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alfa_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_alfa_hover")
+text = "+"
+script = ExtResource("3_toggle")
+panel_objetivo = NodePath("../papel_braille")
+
+[node name="Panel video" type="Control" parent="maps/MarginContainer/HBoxContainer" unique_id=2047547892]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=797795950]
+clip_children = 1
+layout_mode = 0
+offset_left = 37.0
+offset_top = 17.0
+offset_right = 250.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_njqwk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="maps/MarginContainer/HBoxContainer/Panel video/Panel" unique_id=559358538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.89627
+offset_top = -140.5
+offset_right = 242.49997
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("11_0x8y4")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Mobile" type="TextureRect" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=1519462270]
+layout_mode = 1
+offset_left = 15.0
+offset_right = 271.0
+offset_bottom = 337.1323
+texture = ExtResource("11_p8xpx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel_Numero pagina" type="PanelContainer" parent="." unique_id=197682674]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 13.0
+offset_right = -11.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_13qdw")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel_Numero pagina" unique_id=720676379]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel_Numero pagina/MarginContainer" unique_id=707247220]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel_Numero pagina/MarginContainer/HBoxContainer" unique_id=801452925]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="Label" type="Label" parent="Panel_Numero pagina/MarginContainer/HBoxContainer" unique_id=412923023]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "05"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Premio" parent="." unique_id=1550663642 instance=ExtResource("99_premio")]
+visible = false
+layout_mode = 1
+textura_premio = ExtResource("120_premio")
+
+[node name="Cuestion" parent="." unique_id=1513975721 instance=ExtResource("100_cuestion")]
+visible = false
+layout_mode = 1
+pregunta = "En el alfabeto Braille de 6 puntos, ¿cómo se escribe el nombre CASIMIRO?"
+opciones = Array[String](["A) ⠚ ⠁ ⠎ ⠊ ⠍ ⠊ ⠗ ⠕ (C-A-S-I-M-I-R-O) ⠚⠁⠎⠊⠍⠊⠗⠕", "B) ⠃ ⠗ ⠁ ⠊ ⠇ ⠇ ⠑ (B-R-A-I-L-L-E) ⠃⠗⠁⠊⠇⠇⠑", "C) ⠍ ⠁ ⠛ ⠊ ⠉ ⠕ ⠎ (M-A-G-I-C-O-S) ⠍⠁⠛⠊⠉⠕⠎"])
+indice_correcto = 0
+pista_fallo = "¡Casi! Abre la tabla de Braille pulsando el botón '+' de la pantalla y mira las letras: C es ⠚, A es ⠁, S es ⠎..."
+
+[node name="Fallo" parent="." unique_id=1448397914 instance=ExtResource("101_fallo")]
+visible = false
+layout_mode = 1
+
+[node name="JuegoArrastrarLetras" parent="." unique_id=80419915 instance=ExtResource("102_juego")]
+visible = false
+layout_mode = 1
+
+[node name="MarcadorPuntos" parent="." unique_id=150224911 instance=ExtResource("103_marcador")]
+layout_mode = 1

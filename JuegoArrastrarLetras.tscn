@@ -1,0 +1,163 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://JuegoArrastrarLetras.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://fonts/Fredoka.ttf" id="2_fredoka"]
+[ext_resource type="FontFile" path="res://fonts/Nunito.ttf" id="3_nunito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fondo"]
+bg_color = Color(0, 0, 0, 0.55)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tarjeta"]
+bg_color = Color(1, 0.985, 0.96, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.95, 0.62, 0.35, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 14
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cerrar"]
+bg_color = Color(0.9, 0.85, 0.8, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="JuegoArrastrarLetras" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Popup" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fondo" type="Button" parent="Popup"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fondo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fondo")
+
+[node name="Tarjeta" type="PanelContainer" parent="Popup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(760, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -260.0
+offset_right = 380.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(380, 260)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tarjeta")
+
+[node name="Margen" type="MarginContainer" parent="Popup/Tarjeta"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Popup/Tarjeta/Margen"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TopBar" type="HBoxContainer" parent="Popup/Tarjeta/Margen/VBox"]
+layout_mode = 2
+
+[node name="Icono" type="Label" parent="Popup/Tarjeta/Margen/VBox/TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "🤲"
+
+[node name="Titulo" type="Label" parent="Popup/Tarjeta/Margen/VBox/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 0.42, 0.16, 1)
+theme_override_fonts/font = ExtResource("2_fredoka")
+theme_override_font_sizes/font_size = 28
+text = "¡ESCRIBE CASIMIRO EN BRAILLE!"
+
+[node name="BotonCerrar" type="Button" parent="Popup/Tarjeta/Margen/VBox/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.85, 0.15, 0.15, 1)
+theme_override_fonts/font = ExtResource("2_fredoka")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_cerrar")
+text = "✕"
+
+[node name="Subtitulo" type="Label" parent="Popup/Tarjeta/Margen/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_nunito")
+theme_override_font_sizes/font_size = 18
+text = "Toca o arrastra cada letra de abajo a su casilla para completar la palabra."
+
+[node name="CentroSlots" type="CenterContainer" parent="Popup/Tarjeta/Margen/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ContenedorSlots" type="HBoxContainer" parent="Popup/Tarjeta/Margen/VBox/CentroSlots"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelMensaje" type="Label" parent="Popup/Tarjeta/Margen/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.5, 0.1, 1)
+theme_override_fonts/font = ExtResource("2_fredoka")
+theme_override_font_sizes/font_size = 20
+text = "Selecciona una letra del abecedario:"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Popup/Tarjeta/Margen/VBox"]
+layout_mode = 2
+
+[node name="CentroGrid" type="CenterContainer" parent="Popup/Tarjeta/Margen/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridAbecedario" type="GridContainer" parent="Popup/Tarjeta/Margen/VBox/CentroGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 13

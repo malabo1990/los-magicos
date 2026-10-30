@@ -1,0 +1,162 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://d3hwkuvvv8lmy" path="res://Dactololigico/011.jpg" id="2_img"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+[ext_resource type="Texture2D" uid="uid://d8gme4vww7q3" path="res://Triángulo izqueirda.svg" id="10_izq"]
+[ext_resource type="Texture2D" uid="uid://bfovavmaqgqh6" path="res://Triángulo derecha.svg" id="11_der"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_acento"]
+color = Color(1, 0.6, 0.2, 1)
+thickness = 5
+
+[node name="Escena1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://12/Escena12.tscn"
+escena_siguiente = "res://Final/Escena1.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+
+[node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Titulo" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 6
+
+[node name="VBox" type="VBoxContainer" parent="Titulo"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Titulo/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Dactológico"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineaMargen" type="MarginContainer" parent="Titulo/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_right = 380
+
+[node name="Linea" type="HSeparator" parent="Titulo/VBox/LineaMargen"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_acento")
+
+[node name="Contenido" type="MarginContainer" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 140.0
+offset_right = -120.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Contenido"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Imagen" type="TextureRect" parent="Contenido/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+texture = ExtResource("2_img")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[center][b]¡Descubre el abecedario dactilológico![/b][/center]"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="BotonAnterior" type="Button" parent="PanelContainer2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 64)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("10_izq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spacer" type="Control" parent="PanelContainer2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BotonSiguiente" type="Button" parent="PanelContainer2/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 64)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("11_der")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="NumeroPagina" parent="." instance=ExtResource("98_numero")]
+numero = 14
+
+[node name="MarcadorPuntos" parent="." instance=ExtResource("103_marcador")]
+layout_mode = 1
+

@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://ttpgtdaj6ijm"]
+
+[ext_resource type="Script" uid="uid://cx0dlxhfejkfr" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" uid="uid://cq1k1subwx3ra" path="res://Campo.png" id="2_campo"]
+[ext_resource type="Texture2D" uid="uid://b2x8nquq45qyw" path="res://maps_transparente.png" id="2_maps"]
+[ext_resource type="Texture2D" uid="uid://vojoi7n6h8p" path="res://slider_grabber.png" id="5_grabber"]
+[ext_resource type="Texture2D" uid="uid://u3xc2uahw33o" path="res://marcos_transparente.png" id="6_marcos"]
+[ext_resource type="Script" uid="uid://cii3f1ko8m4rc" path="res://TamanoTexto.gd" id="7_tamano"]
+[ext_resource type="VideoStream" uid="uid://dvcylbakmp8mp" path="res://Videos/video_2026-09-18_22-43-58.ogv" id="11_video"]
+[ext_resource type="Texture2D" uid="uid://omq3serjqnoh" path="res://mobile.png" id="12_mobile"]
+[ext_resource type="Texture2D" uid="uid://hj02fu466k7l" path="res://9/9.png" id="14_y2o6e"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+[ext_resource type="PackedScene" uid="uid://deg23drpgcd3o" path="res://Premio.tscn" id="99_premio"]
+[ext_resource type="PackedScene" path="res://Cuestion.tscn" id="100_cuestion"]
+[ext_resource type="PackedScene" path="res://Fallo.tscn" id="101_fallo"]
+[ext_resource type="PackedScene" path="res://MarcadorPuntos.tscn" id="103_marcador"]
+[ext_resource type="Texture2D" uid="uid://6kmehn7ji8xc" path="res://9/abeja.png" id="120_premio"]
+[ext_resource type="FontFile" uid="uid://bbns4nkaauted" path="res://fonts/Fredoka.ttf" id="font_fredoka"]
+[ext_resource type="FontFile" uid="uid://dgryo2x2ynkxw" path="res://fonts/Nunito.ttf" id="font_nunito"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejs1d"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct8ey"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.3)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh13a"]
+content_margin_top = 17.0
+content_margin_bottom = 17.0
+bg_color = Color(1, 0.55, 0.1, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co70b"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.08, 0.08, 0.08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.12890625, 0.12890625, 0.12890625, 1)
+
+[node name="Escena9" type="Control" unique_id=1995901763]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://8/Escena8.tscn"
+escena_siguiente = "res://10/Escena10.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+
+[node name="Fondo" type="Panel" parent="." unique_id=1389335606]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1819540161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -23.0
+offset_right = 14.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_campo")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=426298996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="maps" type="NinePatchRect" parent="." unique_id=2028024192]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -507.0
+offset_top = -258.0
+offset_right = 528.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_maps")
+region_rect = Rect2(24.48816, -3.5371094, 2124.6138, 1326.8655)
+patch_margin_left = 128
+patch_margin_top = 109
+patch_margin_right = 101
+patch_margin_bottom = 103
+
+[node name="barra titulo" type="TextureRect" parent="maps" unique_id=565045360]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.7821
+offset_top = -28.0
+offset_right = 252.7821
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("6_marcos")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="maps/barra titulo" unique_id=2115154888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="maps/barra titulo/MarginContainer" unique_id=93338716]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("font_fredoka")
+theme_override_font_sizes/font_size = 32
+text = "6. Animales que firman"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="maps" unique_id=856581119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="maps/MarginContainer" unique_id=1773058175]
+layout_mode = 2
+
+[node name="Imagen" type="TextureRect" parent="maps/MarginContainer/HBoxContainer" unique_id=1664151441]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("120_premio")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoPanel" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=2042256561]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -27.0
+offset_right = 481.0
+offset_bottom = 221.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="Margen" type="MarginContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel" unique_id=29498352]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen" unique_id=1557472575]
+layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="maps/MarginContainer/HBoxContainer/Imagen/TextoPanel/Margen/VBoxContainer" unique_id=1302113410]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("font_nunito")
+theme_override_font_sizes/normal_font_size = 20
+text = "¡La naturaleza también usa signos!
+Las abejas bailan para decir dónde está la comida.
+Algunos animales usan movimientos para comunicarse. Algunos gorilas y chimpancés aprendieron lengua de signos.
+La más famosa fue Koko, una gorila que aprendió más de 1000 signos y hablaba con las manos.
+Los animales usan gestos, bailes y movimientos para comunicarse. ¡La naturaleza está llena de signos mágicos!
+
+Para superar la prueba, los niños tuvieron que imitar a las abejas, convertirse en Koko y signar. Y… ¡lo consiguieron!
+
+No podían casi seguir corriendo del ataque de risa que tenían. Cuando se tranquilizaron, siguieron caminando hasta que vieron un teléfono y unos ordenadores."
+
+[node name="SliderTamano" type="VSlider" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=1283673787]
+custom_minimum_size = Vector2(52, 240)
+layout_mode = 0
+offset_left = -82.0
+offset_top = 10.0
+offset_right = -30.0
+offset_bottom = 250.0
+tooltip_text = "Tamaño del texto"
+theme_override_icons/grabber = ExtResource("5_grabber")
+theme_override_icons/grabber_highlight = ExtResource("5_grabber")
+theme_override_icons/grabber_disabled = ExtResource("5_grabber")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ejs1d")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ct8ey")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_eh13a")
+min_value = 12.0
+max_value = 40.0
+value = 20.0
+script = ExtResource("7_tamano")
+ruta_texto = NodePath("../TextoPanel/Margen/VBoxContainer/Texto")
+
+[node name="EtiquetaTamano" type="PanelContainer" parent="maps/MarginContainer/HBoxContainer/Imagen" unique_id=1389126036]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -50.0
+offset_right = 173.0
+offset_bottom = -6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_co70b")
+
+[node name="Texto" type="Label" parent="maps/MarginContainer/HBoxContainer/Imagen/EtiquetaTamano" unique_id=1892286265]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tamaño del texto"
+vertical_alignment = 1
+
+[node name="Panel video" type="Control" parent="maps/MarginContainer/HBoxContainer" unique_id=650881013]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=925608629]
+clip_children = 1
+layout_mode = 0
+offset_left = 37.0
+offset_top = 79.0
+offset_right = 250.0
+offset_bottom = 366.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_njqwk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="maps/MarginContainer/HBoxContainer/Panel video/Panel" unique_id=1491540714]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.89627
+offset_top = -140.5
+offset_right = 242.49997
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("11_video")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Mobile" type="TextureRect" parent="maps/MarginContainer/HBoxContainer/Panel video" unique_id=531652914]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 62.0
+offset_right = 271.0
+offset_bottom = 399.1323
+texture = ExtResource("12_mobile")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NumeroPagina" parent="." unique_id=2009090569 instance=ExtResource("98_numero")]
+visible = false
+numero = 10
+
+[node name="Premio" parent="." unique_id=40162592 instance=ExtResource("99_premio")]
+visible = false
+layout_mode = 1
+textura_premio = ExtResource("14_y2o6e")
+
+[node name="Cuestion" parent="." unique_id=1460366011 instance=ExtResource("100_cuestion")]
+visible = false
+layout_mode = 1
+pregunta = "¿Cómo se comunican las abejas para avisar de las flores?"
+opciones = Array[String](["A) Con un baile o danza especial 🐝💃", "B) Hablando por teléfono móvil 📱", "C) Enviando cartas por correo ✉️"])
+indice_correcto = 0
+indice_reto = 5
+pista_fallo = "¡Casi! Las abejas no tienen teléfonos... ¡hacen una divertida danza del ocho con su cuerpo!"
+
+[node name="Fallo" parent="." unique_id=1115680334 instance=ExtResource("101_fallo")]
+visible = false
+layout_mode = 1
+
+[node name="MarcadorPuntos" parent="." unique_id=675086449 instance=ExtResource("103_marcador")]
+visible = false
+layout_mode = 1

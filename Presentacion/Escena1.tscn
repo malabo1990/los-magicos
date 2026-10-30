@@ -1,0 +1,276 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://Navegacion.gd" id="1_nav"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/david.png" id="2_david"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/casimiro.png" id="3_casi"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/eider.png" id="4_eider"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/angel.png" id="5_angel"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/inaki.png" id="6_inaki"]
+[ext_resource type="Texture2D" path="res://Presentacion/caras/esti.png" id="7_esti"]
+[ext_resource type="Texture2D" uid="uid://d8gme4vww7q3" path="res://Triángulo izqueirda.svg" id="10_izq"]
+[ext_resource type="Texture2D" uid="uid://bfovavmaqgqh6" path="res://Triángulo derecha.svg" id="11_der"]
+[ext_resource type="PackedScene" path="res://NumeroPagina.tscn" id="98_numero"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hd0"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="Escena1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nav")
+escena_anterior = "res://Introduccion/Escena1.tscn"
+escena_siguiente = "res://2/Escena2.tscn"
+texto_anterior = ""
+texto_siguiente = ""
+
+[node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Contenido" type="MarginContainer" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 205.0
+offset_top = 70.0
+offset_right = -205.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Grid" type="GridContainer" parent="Contenido"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="FichaDavid" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaDavid"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_david")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaDavid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]David:[/b] Es un niño sordo, parece un indio, siempre en el jardín o en el campo haciendo cabañas, trepando por los árboles, haciendo fuego desde los 4 años, dando de comer a las ovejas y vacas. Sus juguetes favoritos son las piedras, los palos y el barro."
+
+[node name="FichaCasimiro" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaCasimiro"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_casi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaCasimiro"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]Casimiro:[/b] Es un niño sordociego, el hermano de Iñaki, tranquilo, cabezón, siempre quiere ser el mejor en el deporte, ser protagonista. Su pasión es el dibujo."
+
+[node name="FichaEider" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaEider"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_eider")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaEider"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]Eider:[/b] Nueva vecina oyente del barrio que entra en el grupo y se integra en su cuadrilla. Una niña con mucha empatía."
+
+[node name="FichaAngel" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaAngel"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_angel")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaAngel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]Ángel:[/b] Es un niño sordo, tranquilo, su pasión es jugar al ajedrez y leer mucho, pero también le gusta jugar al fútbol con sus amigos. Un crack con Lego y la electrónica."
+
+[node name="FichaInaki" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaInaki"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("6_inaki")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaInaki"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]Iñaki:[/b] Es un niño sordo, con mucha curiosidad, quiere saberlo todo. Muy inquieto y atrevido."
+
+[node name="FichaEsti" type="HBoxContainer" parent="Contenido/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Cara" type="TextureRect" parent="Contenido/Grid/FichaEsti"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("7_esti")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="RichTextLabel" parent="Contenido/Grid/FichaEsti"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3
+text = "[b]Esti:[/b] Es una niña sorda con implante y audífono, aprendiendo LSE, inquieta, soñadora, charlatana, empática y muy fiel a sus amigos."
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hd0")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer2/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NumeroPagina" parent="." instance=ExtResource("98_numero")]
+numero = 2
+
+[node name="BotonAnterior" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -55.0
+offset_right = 154.0
+offset_bottom = 55.0
+grow_vertical = 2
+icon = ExtResource("10_izq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BotonSiguiente" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -55.0
+offset_right = -44.0
+offset_bottom = 55.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("11_der")
+flat = true
+icon_alignment = 1
+expand_icon = true

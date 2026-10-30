@@ -1,0 +1,110 @@
+# Codemagic — compilación de "Los magicos" para iOS
+# Docs: https://docs.codemagic.io/yaml/yaml-getting-started/
+#
+# Antes de lanzar el workflow:
+#   1. Sube el proyecto a un repositorio PRIVADO (GitHub/GitLab/Bitbucket).
+#      No subas build/ (lo excluye .gitignore).
+#   2. En Codemagic, añade el repo y crea la app.
+#   3. En "Code signing identities" sube:
+#        - Certificado .p12 (+ contraseña)
+#        - Provisioning profile .mobileprovision
+#      Ambos con el bundle id com.losmagicos.app.
+#   4. En "Environment variables" crea APPLE_TEAM_ID con tu Team ID de Apple.
+#   5. Ejecuta el workflow "ios-release".
+#
+# Si tienes cuenta Apple de pago, puedes usar la integración App Store Connect
+# (ver bloque comentado más abajo) y Codemagic gestiona los certificados solo.
+
+workflows:
+  ios-release:
+    name: Los magicos - iOS
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+
+    environment:
+      vars:
+        GODOT_VERSION: "4.7.2"
+        GODOT_TEMPLATES_DIR: "4.7.2.stable"
+        APP_NAME: "los-magicos"
+        BUNDLE_ID: "com.losmagicos.app"
+        # APPLE_TEAM_ID se define en Codemagic (Environment variables)
+
+      # development -> instalar en tu iPhone (Apple ID gratis o de pago)
+      # app_store  -> distribuir por App Store / TestFlight (cuenta de pago)
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: com.losmagicos.app
+
+      # Cuenta de pago: descomenta y elige el nombre de tu integración
+      # integrations:
+      #   app_store_connect: LosMagicosASC
+
+    cache:
+      cache_paths:
+        - ~/Library/Application Support/Godot/export_templates
+
+    scripts:
+      - name: Instalar Godot y plantillas de exportación
+        script: |
+          set -e
+          cd "$CM_BUILD_DIR"
+
+          curl -L --fail -o godot.zip \
+            "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_macos.universal.zip"
+          unzip -q -o godot.zip
+          chmod +x "Godot.app/Contents/MacOS/Godot"
+
+          TPL_DIR="$HOME/Library/Application Support/Godot/export_templates/${GODOT_TEMPLATES_DIR}"
+          mkdir -p "$TPL_DIR"
+          if [ ! -f "$TPL_DIR/ios.zip" ]; then
+            curl -L --fail -o templates.tpz \
+              "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+            rm -rf /tmp/tpl && mkdir -p /tmp/tpl
+            unzip -q -o templates.tpz -d /tmp/tpl
+            cp -R /tmp/tpl/templates/. "$TPL_DIR/"
+          fi
+
+      - name: Aplicar Team ID de Apple
+        script: |
+          set -e
+          cd "$CM_BUILD_DIR"
+          if [ -n "${APPLE_TEAM_ID:-}" ]; then
+            /usr/bin/sed -i '' -E \
+              "s#application/app_store_team_id=\"[^\"]*\"#application/app_store_team_id=\"${APPLE_TEAM_ID}\"#" \
+              export_presets.cfg
+            echo "Team ID aplicado: ${APPLE_TEAM_ID}"
+          else
+            echo "AVISO: APPLE_TEAM_ID vacío; se usará el placeholder del preset."
+          fi
+
+      - name: Exportar proyecto Xcode con Godot
+        script: |
+          set -e
+          cd "$CM_BUILD_DIR"
+          mkdir -p build/ios
+          ./Godot.app/Contents/MacOS/Godot --headless --path . \
+            --export-release "iOS" "build/ios/${APP_NAME}.ipa"
+
+      - name: Firmar y generar el .ipa
+        script: |
+          set -e
+          cd "$CM_BUILD_DIR"
+          xcode-project use-profiles
+          xcode-project build-ipa \
+            --project "build/ios/${APP_NAME}.xcodeproj" \
+            --scheme "${APP_NAME}"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - build/ios/*.pck
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      # email:
+      #   recipients:
+      #     - tu-correo@ejemplo.com
+      #   notify:
+      #     success: true
+      #     failure: true
+      scripts:
+        - echo "IPA generado en build/ios/ipa/"
