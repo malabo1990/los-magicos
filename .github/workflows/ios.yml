@@ -54,6 +54,12 @@ jobs:
           fi
           grep -n "app_store_team_id" export_presets.cfg
 
+      - name: Importar recursos del proyecto
+        run: |
+          set -euo pipefail
+          ./Godot.app/Contents/MacOS/Godot --headless --path . --import || true
+          ls -d .godot/imported >/dev/null && echo "Cache .godot/imported listo"
+
       - name: Exportar proyecto Xcode con Godot
         run: |
           set -euo pipefail
