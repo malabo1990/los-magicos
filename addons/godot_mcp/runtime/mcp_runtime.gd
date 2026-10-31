@@ -34,6 +34,11 @@ var _started_at_msec := 0
 
 
 func _ready() -> void:
+	# En la exportación web no existe servidor MCP accesible (localhost del
+	# jugador): no intentar conectar ni reintentar cada 2 s.
+	if OS.has_feature("web"):
+		set_process(false)
+		return
 	_project_path = ProjectSettings.globalize_path("res://")
 	_started_at_msec = Time.get_ticks_msec()
 	process_mode = Node.PROCESS_MODE_ALWAYS

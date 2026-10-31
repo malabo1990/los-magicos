@@ -268,3 +268,26 @@ Main (Portal de entrada)
 - Keystore de **release** para Android (Google Play rechaza APK/AAB firmados en debug).
 - Team ID, certificado y provisioning de iOS.
 - Revisar el `versionCode`/`versionName` antes de cada subida.
+
+---
+
+## 9. Versión web (PWA para iPhone) — 31 oct 2026
+
+- Preset **`Web`** en `export_presets.cfg`:
+  - `variant/thread_support=false` (funciona en GitHub Pages sin cabeceras COOP/COEP).
+  - PWA activada, iconos 144/180/512, `display: standalone`.
+  - `html/head_include` con metadatos iOS (aunque Godot no los insertó; se añadieron a `index.html` tras exportar).
+- Export:
+  ```bash
+  flatpak run --command=godot org.godotengine.Godot --headless \
+    --path "/home/Malabo/Documentos/2025/Godot/los-magicos" \
+    --export-release "Web" build/web/index.html
+  ```
+- Publicación: rama **`gh-pages`** del repo (solo el contenido de `build/web`).
+  - URL: **https://malabo1990.github.io/los-magicos/**
+  - `index.pck` 102 MB · `index.wasm` 38 MB · total 136 MB.
+- Instalación en iPhone: Safari → abrir la URL → compartir → **Añadir a pantalla de inicio**.
+- Limitaciones observadas: los vídeos `.ogv` no se reproducen en web. Godot 4.7 **solo soporta Ogg Theora** (WebM se eliminó en Godot 4.0) y los navegadores no decodifican Theora; se confirmó con `ClassDB.class_exists("VideoStreamWebM") == false`.
+- **Solución aplicada**: autoload `VideoWebPoster.gd` — en la build web detecta cada `VideoStreamPlayer`, lo pausa y le superpone un fotograma fijo (`Videos/poster_video.png`, extraído del vídeo con ffmpeg). En escritorio/móvil nativo no hace nada.
+- El autoload `MCPRuntime` del addon ya no intenta conectar con `ws://127.0.0.1:6505` en web (guarda `OS.has_feature("web")`).
+- Actualizar la PWA: reexportar y volver a subir el contenido a la rama `gh-pages`.

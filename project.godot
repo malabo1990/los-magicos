@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MCPRuntime="*uid://3fh08fg3rlff"
 EstadoJuego="*res://EstadoJuego.gd"
+VideoWebPoster="*res://VideoWebPoster.gd"
 
 [debug]
 
